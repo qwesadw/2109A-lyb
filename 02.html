@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .tab{
+            display: flex;
+        }
+        .tab-li{
+            width: 100px;
+            height: 30px;
+            border: 1px solid #008000;
+            text-align: center;
+            line-height: 30px;
+            color: #008000;
+        }
+        #red{
+            width: 20px;
+            height: 20px;
+            background: red;
+            
+        }
+        #green{
+            width: 20px;
+            height: 20px;
+            background: #008000;
+            margin-left: 20px;
+        }
+        #black{
+            width: 20px;
+            height: 20px;
+            background: black;
+            margin-left: 20px;
+        }
+        .list{
+            display: flex;
+        }
+    </style>
+</head>
+<body id="bd">
+    <ul class="list">
+        <li id="red"></li>
+        <li id="green"></li>
+        <li id="black"></li>
+    </ul>
+
+    <div  class="tab" id="tb">
+        <div class="tab-li">新闻</div>
+        <div class="tab-li">娱乐</div>
+        <div class="tab-li">体育</div>
+        <div class="tab-li">电影</div>
+        <div class="tab-li">音乐</div>
+        <div class="tab-li">旅游</div>
+
+    </div>
+</body>
+<script>
+    function changeBg(elem,attr,value){
+        elem.style[attr] = value
+    }
+    window.onload = function(){
+        var oLi = document.getElementsByTagName("li")
+        var oBd = document.getElementById("bd")
+        var oTb = document.getElementById("tb")
+
+        var oAtt = ["background"]
+        var oBdBg = ["#ff0076","718000","#cccccc"]
+        var oTbBg = ["red","green","black"]
+        for(var i = 0 ; i < oLi.length;i++){
+            oLi[i].index = i
+            oLi[i].onclick = function(){
+                for(var x in oLi) oLi[x].className = ""
+                this.className = "current"
+                if(this.index == oLi.length - 1){
+                    changeBg(oBd,oAtt[0],oBdBg[2])
+                    changeBg(oTb,oAtt[0],oTdBg[2])
+                }else{
+                    changeBg(oBd,oAtt[0],oBdBg[this.index])
+                    changeBg(oTb,oAtt[0],oTdBg[this.index])   
+                }
+            }
+        }
+    }
+</script>
+</html>

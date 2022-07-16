@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big-box{
+            width: 500px;
+            margin: 0 auto;
+            /* padding: 0; */
+            text-align: center;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            margin-top: 20px;
+            margin-left: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-box">
+        <input type="button" value="变宽" onclick="changeWide()">
+        <input type="button" value="变高" onclick="changeHeight()">
+        <input type="button" value="变色" onclick="changeColor()">
+        <input type="button" value="隐藏" onclick="changehide()">
+        <input type="button" value="重置" onclick="reset()">
+        <div id="box"></div>
+    </div>
+</body>
+    <script>
+        var box = document.getElementById('box')
+        function changeWide(){
+            
+            box.style.width = '200px';
+        }
+        function changeHeight(){
+            box.style.height= "200px"
+        }
+        function changeColor(){
+            box.style.backgroundColor='blue'
+        }
+        function changehide(){
+            box.style.visibility = 'hidden'
+            // visibility 属性指定一个元素是否是可见的 
+        }
+        function reset(){
+            box.style.cssText = 'bacogroundcolor:black;width:100px;heigth:100px'
+        }
+    </script>
+</html>

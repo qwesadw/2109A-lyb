@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+        }
+        p{
+           
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            margin: 0 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" id="btn" value="点击变色">
+        <div class="box">
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var oDiv = document.getElementsByTagName("p")
+        var oBtn = document.getElementById("btn")
+        oBtn.onclick = function(){
+            for(var i = 0 ; i < oDiv.length ;i++){
+                oDiv[i].style.backgroundColor="greenyellow"
+            }
+        }
+    }
+</script>
+</html>
